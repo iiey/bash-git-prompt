@@ -1,0 +1,26 @@
+# Single line prompt same as 'Ubuntu' but with less unicode symbol
+# better compatible with old machine system
+override_git_prompt_colors() {
+  GIT_PROMPT_THEME_NAME="Ubuntu_Simple"
+
+  GIT_PROMPT_PREFIX="("
+  GIT_PROMPT_SUFFIX=")"
+  GIT_PROMPT_SEPARATOR="|"
+  GIT_PROMPT_STAGED="${Red}o${ResetColor}"
+  GIT_PROMPT_CONFLICTS="${Red}x${ResetColor}"
+  GIT_PROMPT_CHANGED="${Blue}+${ResetColor}"
+  GIT_PROMPT_MASTER_BRANCH="${GIT_PROMPT_BRANCH}"
+  GIT_PROMPT_UNTRACKED="${Cyan}…${ResetColor}"
+  GIT_PROMPT_STASHED="${BoldBlue}s${ResetColor}"
+  GIT_PROMPT_CLEAN="${BoldGreen}v${ResetColor}"
+
+  GIT_PROMPT_START_USER="${Cyan}${PathShort}"
+  GIT_PROMPT_START_ROOT="${BoldRed}${PathShort}"
+
+  GIT_PROMPT_END_USER="${ResetColor}$ "
+  GIT_PROMPT_END_ROOT="${BoldRed}# "
+
+}
+
+reload_git_prompt_colors "Ubuntu_Simple"
+
